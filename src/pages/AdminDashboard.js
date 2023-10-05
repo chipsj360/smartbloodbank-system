@@ -1,4 +1,4 @@
-import '../assets/dashboard.css'
+import '../assets/css/dashboard.css'
 
 
 const AdminDashboard = () => {

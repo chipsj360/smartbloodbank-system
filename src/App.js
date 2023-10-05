@@ -3,6 +3,7 @@ import logo from './logo.svg';
  import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import Navabar from "./components/Navbar";
 import Layout from "./components/Layout";
+import Home from './pages/Home';
 import AdminDashboard from './pages/AdminDashboard';
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 
@@ -16,6 +17,7 @@ function App() {
         <Navabar/>
       </Layout>
         <Routes>
+        <Route path="/" element={<Home/>}/>
           <Route path="/admindashboard" element={<AdminDashboard/>}/>
           
         </Routes>
