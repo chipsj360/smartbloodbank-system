@@ -1,36 +1,68 @@
-import $ from 'jquery';
+import "../../node_modules/jquery/dist/jquery.min.js";
+import myimage from '../assets/images/Designer.png'
+// import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+import { Helmet } from 'react-helmet';
+// import "../assets/css/bootstrap.min.css"
+import "../assets/css/fonts/icomoon/style.css"
+import "../assets/css/owl.carousel.min.css";
+
+import '../assets/css/prefix.css'
+import "../assets/css/offcanvas-navbar.css"
 import React, { useEffect } from 'react';
 const Navbar = () => {
-	// Menu Dropdown Toggle
-   
+ useEffect(() => {
+    const handleNavbarCollapse = () => {
+      document.querySelector('.offcanvas-collapse').classList.toggle('open');
+    };
 
-    return ( 
-        <header className="header-area header-sticky">
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <nav className="main-nav">
-                            {/* Logo Start */}
-                            <a href="index.html" className="logo">
-                                <img src="assets/images/log.png" alt=""/>
-                            </a>
-                            {/*Logo End  */} 
-                            {/*  Menu Start  */}
-                            <ul className="nav">
-                                <li><a href="index.html" className="active">Home</a></li>
-                                
-                                <li><a href="login.php">Login</a></li>
-                            </ul>   
-                            <a className='menu-trigger'>
-                                <span>Menu</span>
-                            </a>
-                            {/* <!-- ***** Menu End ***** --> */}
-                        </nav>
-                    </div>
-                </div>
-            </div>
-       </header>
-     );
+    const navbarSideCollapse = document.querySelector('#navbarSideCollapse');
+    navbarSideCollapse.addEventListener('click', handleNavbarCollapse);
+
+    return () => {
+      navbarSideCollapse.removeEventListener('click', handleNavbarCollapse);
+    };
+  }, []);
+
+  return (
+    <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light shadow mb-4" aria-label="Main navigation">
+      <div className="container-fluid">
+        <i className="bi bi-cart-dash px-2" style={{ fontSize: '2rem', color: 'rgb(47, 108, 223)' }}></i>
+        <a class="navbar-brand" >
+          <img src={myimage} className="logo" />
+        </a>
+        <button className="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link active" href="#">Contact</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link active" href="#">About</a>
+            </li>
+          
+          <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">login</a></li>
+            <li><a class="dropdown-item" href="#">Register</a></li>
+            <li><a class="dropdown-item" href="#">logout</a></li>
+          </ul>
+        </li>
+
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  );
 }
  
 export default Navbar;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import $ from 'jquery';
 import "../assets/css/animate.css";
+import "../assets/css/animate.css";
 import "../assets/css/owl.css";
 import "../assets/css/flex-slider.css";
 import "../assets/css/templatemo-woox-travel.css";
@@ -67,7 +68,7 @@ const Home=()=>{
             <div id="top-banner-1" className="banner">
                 <div className="banner-inner-wrapper header-text">
                 <div className="main-caption">
-                    <h2>WELCOME TO KITWE HOSPITAL BLOOD BANK</h2>
+                    <h2>WELCOME TO SMART BLOOD BANK</h2>
                     <h1>Our Partners</h1>
                     <div className="border-button"><Link to="about.html">Visit</Link></div>
                 </div>
@@ -103,7 +104,7 @@ const Home=()=>{
             <div id="top-banner-2" className="banner">
                 <div className="banner-inner-wrapper header-text">
                 <div className="main-caption">
-                    <h2>WELCOME TO KITWE HOSPITAL BLOOD BANK</h2>
+                    <h2>WELCOME TO SMART BLOOD BANK</h2>
                     <h1>Our Lab</h1>
                     <div className="border-button"><Link to="about.html">Visit</Link></div>
                 </div>
