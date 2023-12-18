@@ -9,8 +9,15 @@ import "../assets/css/owl.carousel.min.css";
 
 import '../assets/css/prefix.css'
 import "../assets/css/offcanvas-navbar.css"
+import useToken from '../hooks/useToken';
 import React, { useEffect } from 'react';
+
 const Navbar = () => {
+  const{logout}=useToken()
+
+  const handleLogout=()=>{
+   logout()
+  }
  useEffect(() => {
     const handleNavbarCollapse = () => {
       document.querySelector('.offcanvas-collapse').classList.toggle('open');
@@ -53,7 +60,7 @@ const Navbar = () => {
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">login</a></li>
             <li><a class="dropdown-item" href="#">Register</a></li>
-            <li><a class="dropdown-item" href="#">logout</a></li>
+            <li><button class="dropdown-item" onClick={handleLogout}>logout</button></li>
           </ul>
         </li>
 

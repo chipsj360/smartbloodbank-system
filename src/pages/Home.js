@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import $ from 'jquery';
 import "../assets/css/animate.css";
-import "../assets/css/animate.css";
 import "../assets/css/owl.css";
 import "../assets/css/flex-slider.css";
 import "../assets/css/templatemo-woox-travel.css";
 
 
-const Home=()=>{
+const Home=({token})=>{
 
     useEffect(() => {
 
@@ -358,7 +357,7 @@ const Home=()=>{
       </div>
     </div>
   </div>
-  
+  <h1>{token}</h1>
         </div>
         );
 }
